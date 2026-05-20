@@ -12,7 +12,7 @@ const server = http.createServer((req, res) => {
 
 // Define the port and hostname
 const hostname = '216.151.17.91';
-const port = 3000;
+const port = process.env.PORT || 4000 ;
 
 // Start the server
 server.listen(port, hostname, () => {
