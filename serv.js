@@ -4,17 +4,17 @@ const net = require("net");
 
 // Create a TCP server
 const server = net.createServer((socket) => {
-    console.log("Client connected");
+    console.log("istemci baglandi");
 
     socket.on("data", (data) => {
-        console.log("Data received via TCP Client:", data.toString());
+        console.log("bilgi alindi:", data.toString());
     });
 
     socket.on("end", () => {
-        console.log("TCP Connection ended");
+        console.log("TCP baglantisi bitti");
     });
 });
 
 server.listen(process.env.PORT || 8080, () => {
-    console.log("TCP server open on 8080");
+    console.log("TCP server sunda acik: 8080");
 });
