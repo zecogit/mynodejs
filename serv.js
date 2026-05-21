@@ -7,12 +7,11 @@ const server = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'text/plain');
 
   // Send a response to the client
-  res.end('Hello, World!');
+  res.end('IT WORKS');
 });
 
 // Define the port and hostname
-const hostname = '216.151.17.91';
-const port = process.env.PORT || 4000 ;
+const port = process.env.PORT || 8080 ;
 
 // Start the server
 server.listen(port, hostname, () => {
