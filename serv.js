@@ -15,6 +15,6 @@ const server = net.createServer((socket) => {
     });
 });
 
-server.listen(8080, () => {
+server.listen(process.env.PORT || 8080, () => {
     console.log("TCP server open on 8080");
 });
