@@ -1,19 +1,20 @@
-const http = require('http');
+//tcpServer.js
+// Create a TCP server
+const net = require("net");
 
-// Create a server that responds to incoming requests
-const server = http.createServer((req, res) => {
-  // Set the HTTP status code and content type
-  res.statusCode = 200; // OK
-  res.setHeader('Content-Type', 'text/plain');
+// Create a TCP server
+const server = net.createServer((socket) => {
+    console.log("Client connected");
 
-  // Send a response to the client
-  res.end(3+7);
+    socket.on("data", (data) => {
+        console.log("Data received via TCP Client:", data.toString());
+    });
+
+    socket.on("end", () => {
+        console.log("TCP Connection ended");
+    });
 });
 
-// Define the port and hostname
-const port = process.env.PORT || 8080 ;
-
-// Start the server
-server.listen(port, () => {
-  console.log(`Server is running`);
+server.listen(8080, () => {
+    console.log("TCP server open on 8080");
 });
