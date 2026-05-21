@@ -7,7 +7,7 @@ const server = http.createServer((req, res) => {
   res.setHeader('Content-Type', 'text/plain');
 
   // Send a response to the client
-  res.end('IT WORKS');
+  res.end(3+7);
 });
 
 // Define the port and hostname
