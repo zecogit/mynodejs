@@ -1,20 +1,6 @@
-//tcpServer.js
-// Create a TCP server
-const net = require("net");
+const http = require('http');
 
-// Create a TCP server
-const server = net.createServer((socket) => {
-    console.log("istemci baglandi");
-
-    socket.on("data", (data) => {
-        console.log("bilgi alindi:", data.toString());
-    });
-
-    socket.on("end", () => {
-        console.log("TCP baglantisi bitti");
-    });
-});
-
-server.listen(process.env.PORT || 8080, () => {
-    console.log("TCP server sunda acik: 8080");
-});
+http.createServer(function (req, res) {
+   res.writeHead(200, {'Content-Type': 'text/plain'});
+   res.end('Hello, World!\n');
+}).listen(3000);
