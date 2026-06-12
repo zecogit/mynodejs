@@ -12,3 +12,4 @@ wss.on('connection', (ws) => {
    // Sending a message to the client
    ws.send('Welcome to the WebSocket server!');
    // Listening
+)}
